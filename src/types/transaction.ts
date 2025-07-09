@@ -4,7 +4,7 @@ export interface ITransaction {
     price: number;
     category: string;
     data: Date;
-    type: "income" | "outcome";
+    type: "INCOME" | "OUTCOME";
 }
 
 export interface ITotal {

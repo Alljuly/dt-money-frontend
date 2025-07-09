@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #E7E9EE;
-  --header: #5429CC;
+  --background: #e7e9ee;
+  --header: #5429cc;
   --foreground: #171717;
-  --button: #6933FF;
-  --income: #33CC95;
-  --outcome: #E52E4D;
-  --title: #363F5F;
-  --table: #969CB2;
-  --input-border: #D7D7D7;
-  --transaction-border: #D7D7D7;
-  --modal: #F0F2F5;
+  --button: #6933ff;
+  --INCOME: #33cc95;
+  --OUTCOME: #e52e4d;
+  --title: #363f5f;
+  --table: #969cb2;
+  --input-border: #d7d7d7;
+  --transaction-border: #d7d7d7;
+  --modal: #f0f2f5;
 }
 
 @theme inline {
@@ -19,8 +19,8 @@
   --color-header: var(--header);
   --color-foreground: var(--foreground);
   --color-button: var(--button);
-  --color-income: var(--income);
-  --color-outcome: var(--outcome);
+  --color-INCOME: var(--INCOME);
+  --color-OUTCOME: var(--OUTCOME);
   --color-title: var(--title);
   --color-table: var(--table);
   --color-input-border: var(--input-border);

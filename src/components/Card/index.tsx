@@ -4,17 +4,17 @@ import Image from "next/image";
 export interface ICardProps {
  title: string;
  value: number;
- type: "income" | "outcome" | "total";
+ type: "INCOME" | "OUTCOME" | "total";
 }
 export function Card({ title, type, value }:ICardProps){
-  const cardBgColor = ["income", "outcome"].includes(type) 
+  const cardBgColor = ["INCOME", "OUTCOME"].includes(type) 
     ? "bg-white" 
     : value >= 0
       ? "bg-income"
-      : "bg-outcome";
-   const cardIcon = type === "income"
+      : "bg-OUTCOME";
+   const cardIcon = type === "INCOME"
      ? "/income.png"
-     : type === "outcome"
+     : type === "OUTCOME"
        ? "/outcome.png"
        : "/total.png";
     const cardTextColor = type === "total" 

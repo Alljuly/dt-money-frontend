@@ -1,16 +1,27 @@
 import { TransactionButton } from "../TransactionButton";
 
 export interface TransactionSwitcherProps {
-    type: 'income' | 'outcome';
-    setType: (type: 'income' | 'outcome') => void;
+  type: "INCOME" | "OUTCOME";
+  setType: (type: "INCOME" | "OUTCOME") => void;
 }
 
-export function TransactionSwitcher({type, setType }: TransactionSwitcherProps) {
-    const isIncome = type === 'income';
-    return (
-        <div className="flex flex-row justify-between w-full gap-4 ">
-            <TransactionButton type="income" isSelected={isIncome} onClick={() => setType("income")} />
-            <TransactionButton type="outcome" isSelected={!isIncome} onClick={() => setType("outcome")}/>
-        </div>
-    )
+export function TransactionSwitcher({
+  type,
+  setType,
+}: TransactionSwitcherProps) {
+  const isIncome = type === "INCOME";
+  return (
+    <div className="flex flex-row justify-between w-full gap-4 ">
+      <TransactionButton
+        type="INCOME"
+        isSelected={isIncome}
+        onClick={() => setType("INCOME")}
+      />
+      <TransactionButton
+        type="OUTCOME"
+        isSelected={!isIncome}
+        onClick={() => setType("OUTCOME")}
+      />
+    </div>
+  );
 }
