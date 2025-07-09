@@ -32,6 +32,16 @@ export default function Home() {
     },
   });
 
+  const { data: allTransactions = [] } = useQuery({
+    queryKey: ["all-transactions"],
+    queryFn: async () => {
+      const response = await axios.get(
+        `http://localhost:5000/transaction?skip=0&take=1000`
+      );
+      return response.data;
+    },
+  });
+
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -97,7 +107,7 @@ export default function Home() {
   const handleAddTransaction = (newTransaction: ITransaction) => {
     createMutation.mutate({
       ...newTransaction,
-      type: newTransaction.type, 
+      type: newTransaction.type,
     });
   };
 
@@ -129,11 +139,11 @@ export default function Home() {
   };
 
   const totalTransactions: ITotal = useMemo(() => {
-    if (!transactions || transactions.length === 0) {
+    if (!allTransactions || allTransactions.length === 0) {
       return { totalIncome: 0, totalOutcome: 0, total: 0 };
     }
 
-    return transactions.reduce(
+    return allTransactions.reduce(
       (acc: ITotal, { type, price }: ITransaction) => {
         if (type === "INCOME") {
           acc.totalIncome += price;
@@ -146,7 +156,7 @@ export default function Home() {
       },
       { totalIncome: 0, totalOutcome: 0, total: 0 }
     );
-  }, [transactions]);
+  }, [allTransactions]);
 
   return (
     <div>

@@ -10,7 +10,7 @@ export function Card({ title, type, value }:ICardProps){
   const cardBgColor = ["INCOME", "OUTCOME"].includes(type) 
     ? "bg-white" 
     : value >= 0
-      ? "bg-income"
+      ? "bg-INCOME"
       : "bg-OUTCOME";
    const cardIcon = type === "INCOME"
      ? "/income.png"

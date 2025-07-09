@@ -77,7 +77,7 @@ export function FormModal({
     setValue("type", type);
   };
 
-  const type = watch("type", "INCOME"); // valor padrão, se necessário
+  const type = watch("type", "INCOME"); 
 
   return (
     <div
@@ -150,7 +150,7 @@ export function FormModal({
               <div className="bg-modal px-12 py-3 flex sm:flex-row-reverse w-full mb-11">
                 <button
                   type="submit"
-                  className="mt-3 w-full justify-center rounded-md bg-INCOME text-white px-3 py-5 text-normal font-semibold shadow-sm hover:opacity-80 sm:mt-0"
+                  className="mt-3 w-full justify-center rounded-md bg-income text-white px-3 py-5 text-normal font-semibold shadow-sm hover:opacity-80 sm:mt-0"
                 >
                   Confirmar
                 </button>
